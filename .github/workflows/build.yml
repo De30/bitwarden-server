@@ -177,7 +177,7 @@ jobs:
     needs:
       - testing
       - lint
-    uses: bitwarden/self-host/.github/workflows/build-self-host.yml
+    uses: bitwarden/self-host/.github/workflows/build-self-host.yml@5eb3ad4b2783bc19b54698e9314a528d9534045e
     secrets: inherit
 
   build-docker:
