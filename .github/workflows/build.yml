@@ -172,6 +172,14 @@ jobs:
           path: ${{ matrix.base_path }}/${{ matrix.project_name }}/${{ matrix.project_name }}.zip
           if-no-files-found: error
 
+  build-docker-self-host:
+    name: Build Docker Self-Host
+    needs:
+      - testing
+      - lint
+    uses: bitwarden/self-host/.github/workflows/build-self-host.yml
+    secrets: inherit
+
   build-docker:
     name: Build Docker images
     runs-on: ubuntu-22.04
